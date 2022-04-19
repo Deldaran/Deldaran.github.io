@@ -1,5 +1,55 @@
-h1 {
-  color: #9356DC;
+@font-face {
+  font-family: "Roboto";
+  src: url("public/font/Roboto-Regular-webfont.woff") format("woff"), url("Roboto-Bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto";
+}
+header #logo {
+  width: 50%;
+  height: 5%;
+  margin-left: 25%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+header label {
+  display: none;
+}
+header #search ::placeholder {
+  color: black;
+  font-size: medium;
+  font-weight: bolder;
+}
+header input {
+  width: 100%;
+  margin-right: -70%;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.589);
+  text-align: center;
+  padding: 5%;
+  box-shadow: 0px -2px 2px gray;
+}
+header #loc-icon {
+  color: black;
+}
+header #explorer {
+  background-color: rgba(253, 247, 247, 0.253);
+  flex-wrap: wrap;
+  margin-top: -4%;
+  padding: 10px 30px 50px 30px;
+  text-align: center;
+}
+header #explorer .btn {
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  padding: 20px;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-size: medium;
 }
 
 /*# sourceMappingURL=style.css.map */
