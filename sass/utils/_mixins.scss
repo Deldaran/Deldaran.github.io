@@ -1,11 +1,15 @@
-@mixin mobil-only {
-    @media screen and (max-widith : map-get($breakpoints, mobile)) {
+@mixin mobile-only {
+    @media screen and (max-width : map-get($breakpoints, mobile)) {
         @content;
     }
 }
 @mixin logo-size {
     width: $logo-size-width;
     height: $logo-size-height;
+}
+@mixin logo-foot-size {
+    width: $logo-foot-width;
+    height: $logo-foot-height;
 }
 @mixin logo-position {
     margin-left: 25%;
@@ -30,4 +34,51 @@
     border:none;
     color: white;
     font-size: medium;
+    height: auto;
+    width: 250px;
+}
+@mixin header-btn {
+    position: relative;
+    padding: 15px;
+    padding-right: 60px;
+    padding-left: 15px;
+    border-radius: 20px;
+    margin: 10px;
+    border: none;
+    width: 290px;
+    height: 60px;
+}
+@mixin foot-btn {
+    border: none;
+    background-color: gray;
+}
+@mixin card {
+    width: 360px;
+    height: 250px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    
+    
+    
+}
+@mixin style-a {
+    color: black;
+    text-decoration: none;
+}
+@mixin card-image {
+    position: relative;
+    height: 170px;
+    overflow: hidden;
+    
+    
+    
+}
+@mixin card-img {
+    position: absolute ;
+    width: 100%;
+    
+    
 }
