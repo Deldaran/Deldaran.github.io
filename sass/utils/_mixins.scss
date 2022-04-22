@@ -7,26 +7,14 @@
     width: $logo-size-width;
     height: $logo-size-height;
 }
-@mixin logo-foot-size {
-    width: $logo-foot-width;
-    height: $logo-foot-height;
-}
+
 @mixin logo-position {
     margin-left: 25%;
     margin-bottom: 5%;
     margin-top: 5%;
 }
-@mixin font {
-    @font-face {
-        font-family: 'Roboto';
-        src:url('public/font/Roboto-Regular-webfont.woff') format('woff'),
-            url('Roboto-Bold-webfont.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    
-    }
 
-}
+
 @mixin explorer-btn {
     background: linear-gradient(to bottom right,$color-secondary,$color-primary);
     padding: 20px;
@@ -48,10 +36,7 @@
     width: 290px;
     height: 60px;
 }
-@mixin foot-btn {
-    border: none;
-    background-color: gray;
-}
+
 @mixin card {
     width: 360px;
     height: 250px;
@@ -81,4 +66,46 @@
     width: 100%;
     
     
+}
+@mixin btn-like-before {
+    position: absolute;
+    z-index: 1;
+    bottom: 25px;
+    left: 300px;
+    font-size: 30px;
+    border: none;
+    background-color: white;
+    color: gray;
+    transition: all 700ms;
+    transform: scale(1.0), color(gray);
+
+}
+@mixin btn-like-after {
+    transform: color($color-secondary);
+    color: $color-secondary;
+    transform: scale(1.2);
+}
+@mixin footer {
+    background-color: rgb(53, 53, 53);
+    padding: 20px;
+    font-family: $font-text;
+    font-weight: 200;
+    color: white;
+}
+@mixin logo-foot-size {
+    font-family: $font-title;
+        font-weight: 400;
+}
+@mixin foot-list {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 15px;
+}
+@mixin foot-ul {
+    list-style-type: none;
+    margin-left: -40px;
+}
+@mixin foot-icon {
+    font-size: small;
+    margin-right: -2px;
 }

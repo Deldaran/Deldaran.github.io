@@ -1,9 +1,7 @@
-@font-face {
-  font-family: "Roboto";
-  src: url("public/font/Roboto-Regular-webfont.woff") format("woff"), url("Roboto-Bold-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
+body {
+  margin: 0px;
 }
+
 @media screen and (max-width: 768px) {
   header {
     display: flex;
@@ -43,9 +41,13 @@
     box-shadow: inset 0px 2px 6px rgba(128, 128, 128, 0.493);
   }
 }
+header #filter h2 {
+  margin-left: 15px;
+}
 @media screen and (max-width: 768px) {
   header ul {
     list-style-type: none;
+    margin-left: -30px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -126,12 +128,34 @@
     border-radius: 20px;
     overflow: hidden;
     margin-bottom: 20px;
+    position: relative;
   }
 }
 @media screen and (max-width: 768px) {
   main .card a {
     color: black;
     text-decoration: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  main .card .btn-like {
+    position: absolute;
+    z-index: 1;
+    bottom: 25px;
+    left: 300px;
+    font-size: 30px;
+    border: none;
+    background-color: white;
+    color: gray;
+    transition: all 700ms;
+    transform: scale(1), color(gray);
+  }
+}
+@media screen and (max-width: 768px) {
+  main .card .btn-like:focus {
+    transform: color(#FF79DA);
+    color: #FF79DA;
+    transform: scale(1.2);
   }
 }
 @media screen and (max-width: 768px) {
@@ -162,31 +186,36 @@
     padding-bottom: 10px;
   }
 }
-@media screen and (max-width: 768px) {
-  main .card-body .card-description i {
-    position: absolute;
-    left: 300px;
-    bottom: 30px;
-    font-size: 30px;
-  }
-}
 
 @media screen and (max-width: 768px) {
   footer {
-    border: none;
-    background-color: gray;
+    background-color: rgb(53, 53, 53);
+    padding: 20px;
+    font-family: "Roboto";
+    font-weight: 200;
+    color: white;
   }
 }
-@media screen and (max-width: 768px) {
-  footer img {
-    width: 50%;
-    height: 5%;
-  }
+footer h2 {
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
 }
 @media screen and (max-width: 768px) {
   footer ul {
     list-style-type: none;
+    margin-left: -40px;
   }
+}
+@media screen and (max-width: 768px) {
+  footer ul li {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 15px;
+  }
+}
+footer ul li i[class="fa-solid fa-handshake-angle"] {
+  font-size: small;
+  margin-right: -2px;
 }
 
 /*# sourceMappingURL=style.css.map */

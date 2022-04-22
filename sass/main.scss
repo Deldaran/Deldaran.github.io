@@ -1,8 +1,10 @@
 @import "./utils/variables";
 @import "./utils/mixins";
 
-@include font;
 
+body{
+    margin: 0px;
+}
 header{
     @include mobile-only{
         display: flex;
@@ -41,9 +43,15 @@ header{
         }
        
     }
+    #filter{
+        h2{
+            margin-left: 15px;
+        }
+    }
     ul{
         @include mobile-only{
             list-style-type: none;
+            margin-left:-30px ;
         }
     }
     #loc-icon{
@@ -104,11 +112,23 @@ main{
     .card{
         @include mobile-only{
             @include card;
+            position: relative;
         }
         a{
             @include mobile-only{
                 @include style-a;
             }
+        }
+        .btn-like{
+            @include mobile-only{
+                @include btn-like-before;
+            }
+            &:focus{
+                @include mobile-only{
+                    @include btn-like-after;
+                }
+            }
+            
         }
     }
     
@@ -139,29 +159,28 @@ main{
                 padding-left:10px; 
                 padding-bottom: 10px; 
             }
-            i{
-                @include mobile-only{
-                    position: absolute;
-                    left: 300px;
-                    bottom: 30px;
-                    font-size:30px;
-                }
-            }
         }
     }
 }
 footer{
      @include mobile-only{
-        @include foot-btn;
+      @include footer;
      }
-     img{
-         @include mobile-only{
-             @include logo-size
-         }
-     }
+    h2{
+        @include logo-foot-size;
+    }
      ul{
         @include mobile-only{
-            list-style-type: none;
+            @include foot-ul
         }
+        li{
+            @include mobile-only{
+                @include foot-list;
+            }
+            i[class="fa-solid fa-handshake-angle"]{
+                @include foot-icon
+            }
+        }
+
      }
 }
