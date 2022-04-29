@@ -1,0 +1,126 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+body{
+    margin: 0px;
+}
+header{
+    @include mobile-only{
+        display: flex;
+        flex-direction: column;
+        font-family: $font-text;
+    }
+    #head-return{
+        @include mobile-only{
+            display: flex;
+            align-items: baseline;
+        }
+    }
+    .return-btn{
+        @include mobile-only{
+            border: none;
+            font-size: larger;
+            color: rgb(48, 48, 48);
+            background: none;
+            position: relative;
+            bottom: 23px;
+            left: 20px
+        }
+    }
+    #logo{
+        @include mobile-only{
+            @include logo-size;
+            @include logo-position;
+        }
+    }
+    img{
+        overflow: hidden;
+    }
+}
+main{
+    @include mobile-only{
+        display: flex;
+        flex-direction: column;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        position: relative;
+        bottom: 50px;
+        background-color: rgb(228, 228, 228);
+        font-family: $font-text;
+        box-sizing: content-box;
+        
+    }
+    #main-title{
+        @include mobile-only{
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            font-family: $font-title;
+            font-weight: 100;
+            font-size: 15px;
+        }
+        i{
+            @include mobile-only{
+                color: gray;
+                font-size: 25px;
+                padding-left:60px ; 
+            }
+        }
+    }
+    #entre{
+        #list-entre{
+            display: flex;
+            flex-direction: column;
+    
+            
+        }
+    }
+    .btn{
+        @include mobile-only{
+            @include button;
+            display: flex;
+            flex-direction: column;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px rgb(189, 189, 189);
+            width: 95%;
+            height: 70px;
+            margin: 10px;
+            
+        }
+        &-title{
+            
+            height: 25px;
+        }
+        &-description{
+            display: flex;
+            height: 30px;
+            width: 400px;
+            gap: 100px;
+        }
+    }
+    
+
+}
+footer{
+    @include mobile-only{
+     @include footer;
+    }
+   h2{
+       @include logo-foot-size;
+   }
+    ul{
+       @include mobile-only{
+           @include foot-ul
+       }
+       li{
+           @include mobile-only{
+               @include foot-list;
+           }
+           i[class="fa-solid fa-handshake-angle"]{
+               @include foot-icon
+           }
+       }
+
+    }
+}

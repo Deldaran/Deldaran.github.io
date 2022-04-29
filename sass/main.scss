@@ -1,5 +1,6 @@
 @import "./utils/variables";
 @import "./utils/mixins";
+/*@import librairi font awsome*/
 
 
 body{
@@ -34,7 +35,7 @@ header{
     input{
         @include mobile-only{
             width: 100%;
-            margin-right: -70%;
+            margin-right: -75%;
             border: none;
             background-color: $search-color;
             text-align: center;
@@ -123,10 +124,21 @@ main{
             @include mobile-only{
                 @include btn-like-before;
             }
+            &::before{
+                content: "\f004";
+                font-family: "Font Awesome 6 free";
+                font-weight: 400;
+                font-size: larger;
+                transition: ease-in 500ms;
+                color: gray;
+            }
             &:focus{
-                @include mobile-only{
-                    @include btn-like-after;
+                &::before{
+                    @include mobile-only{
+                        @include btn-like-after;
+                    }
                 }
+
             }
             
         }
