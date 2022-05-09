@@ -1,20 +1,31 @@
 @keyframes liste {
   from {
+    visibility: hidden;
     transform: scaleY(0);
     transform-origin: top;
   }
   to {
     transform: scaleY(1);
+    visibility: visible;
   }
 }
 @keyframes spin {
   0% {
     transform: rotate(0deg);
+    visibility: visible;
   }
   90% {
     transform: rotate(360deg);
   }
   100% {
+    visibility: hidden;
+  }
+}
+@keyframes back-box {
+  from {
+    visibility: visible;
+  }
+  to {
     visibility: hidden;
   }
 }
@@ -163,13 +174,35 @@ main .btn:focus .box span {
   top: 16px;
   transform: rotate(1turn);
 }
-main #entre, main #plat, main #dessert {
+main #entre {
   padding-left: 20px;
   animation-name: liste;
   animation-duration: 1500ms;
   animation-delay: 0ms;
 }
-main #entre h2, main #plat h2, main #dessert h2 {
+main #entre h2 {
+  border-bottom: 4px #99E2D0 solid;
+  width: 40px;
+  margin-top: 6px;
+}
+main #plat {
+  padding-left: 20px;
+  animation-name: liste;
+  animation-duration: 1500ms;
+  animation-delay: 1000ms;
+}
+main #plat h2 {
+  border-bottom: 4px #99E2D0 solid;
+  width: 40px;
+  margin-top: 6px;
+}
+main #dessert {
+  padding-left: 20px;
+  animation-name: liste;
+  animation-duration: 1500ms;
+  animation-delay: 2000ms;
+}
+main #dessert h2 {
   border-bottom: 4px #99E2D0 solid;
   width: 40px;
   margin-top: 6px;
