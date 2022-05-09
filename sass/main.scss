@@ -1,16 +1,29 @@
 @import "./utils/variables";
 @import "./utils/mixins";
-/*@import librairi font awsome*/
 
 
 body{
     margin: 0px;
+    animation: show;
+    animation-duration: 5000ms;
 }
 header{
+    .loading{
+        border: 16px solid #f3f3f3;
+        border-top: 16px solid #3498db;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+        position: fixed;
+        z-index: 999;
+    }
     @include mobile-only{
         display: flex;
         flex-direction: column;
         font-family: $font-text;
+        animation: show;
+        animation-duration: 1000ms;
     }
     #logo{
         @include mobile-only{
@@ -24,6 +37,7 @@ header{
         }
     }
     #search{
+        
         ::placeholder{
             @include mobile-only{
                 color: $color-font ;
@@ -34,7 +48,7 @@ header{
     }
     input{
         @include mobile-only{
-            width: 100%;
+            width:90%;
             margin-right: -75%;
             border: none;
             background-color: $search-color;
@@ -71,6 +85,9 @@ header{
         .btn{
             @include mobile-only{
                 @include explorer-btn
+            }
+            &:hover{
+                @include btn-hover;
             }
         }
     

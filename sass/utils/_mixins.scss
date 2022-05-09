@@ -27,6 +27,14 @@
     font-size: medium;
     height: auto;
     width: 250px;
+    opacity: 1;
+    transition: opacity 100ms;
+    transition: all 200ms;
+    box-shadow: 0px 0px 10px rgb(156, 156, 156);
+}
+@mixin btn-hover {
+    opacity: 0.90;
+    box-shadow: 0px 0px 15px rgb(105, 105, 105);
 }
 @mixin header-btn {
     position: relative;
@@ -113,3 +121,25 @@
 @mixin button {
     
 }
+@keyframes liste {
+    from {
+        transform:scaleY(0);
+        transform-origin: top;
+    }
+    to {
+        transform:scaleY(1);
+    }
+}
+@keyframes spin {
+    0% { 
+        transform: rotate(0deg);
+        
+    }
+    90% { 
+        transform: rotate(360deg); 
+        
+    }
+    100%{
+        visibility: hidden;
+    }
+  }

@@ -1,5 +1,26 @@
+@keyframes liste {
+  from {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(360deg);
+  }
+  100% {
+    visibility: hidden;
+  }
+}
 body {
   margin: 0px;
+  background-color: rgb(228, 228, 228);
 }
 
 @media screen and (max-width: 768px) {
@@ -58,6 +79,7 @@ header img {
   main #main-title {
     display: flex;
     align-items: center;
+    justify-content: space-around;
     padding-left: 20px;
     font-family: "Shrikhand", cursive;
     font-weight: 100;
@@ -65,26 +87,26 @@ header img {
   }
 }
 @media screen and (max-width: 768px) {
-  main #main-title i {
+  main #main-title #heart::before {
+    content: "\f004";
+    font-family: "Font Awesome 6 free";
+    font-weight: 400;
+    font-size: 40px;
     color: gray;
-    font-size: 25px;
-    padding-left: 60px;
   }
-}
-main #entre #list-entre {
-  display: flex;
-  flex-direction: column;
 }
 @media screen and (max-width: 768px) {
   main .btn {
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
     border: none;
     border-radius: 20px;
-    box-shadow: 0px 0px 10px rgb(189, 189, 189);
+    box-shadow: 0px 0px 5px rgb(141, 141, 141);
     width: 95%;
     height: 70px;
     margin: 10px;
+    margin-top: 15px;
   }
 }
 main .btn-title {
@@ -92,9 +114,87 @@ main .btn-title {
 }
 main .btn-description {
   display: flex;
+  justify-content: space-between;
   height: 30px;
-  width: 400px;
-  gap: 100px;
+  width: 100%;
+}
+main .btn-description > p {
+  text-overflow: ellipsis;
+  width: 270px;
+  height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: left;
+}
+main .btn-description .price {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  transition: all 1000ms;
+}
+main .btn-description .box {
+  transform-origin: 50% 0%;
+  transition: transform 1000ms;
+  transform: scaleX(0);
+}
+main .btn-description .box span {
+  display: none;
+}
+main .btn:focus .price {
+  margin-right: 80px;
+}
+main .btn:focus .box {
+  display: block;
+  font-size: 35px;
+  transform: scaleX(1);
+  color: white;
+  position: relative;
+  bottom: 73px;
+  left: 36px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 70px;
+  height: 70px;
+  background: aquamarine;
+}
+main .btn:focus .box span {
+  position: relative;
+  display: block;
+  top: 16px;
+  transform: rotate(1turn);
+}
+main #entre, main #plat, main #dessert {
+  padding-left: 20px;
+  animation-name: liste;
+  animation-duration: 1500ms;
+  animation-delay: 0ms;
+}
+main #entre h2, main #plat h2, main #dessert h2 {
+  border-bottom: 4px #99E2D0 solid;
+  width: 40px;
+  margin-top: 6px;
+}
+main #order {
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  padding: 20px;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-size: medium;
+  height: auto;
+  width: 250px;
+  opacity: 1;
+  transition: opacity 100ms;
+  transition: all 200ms;
+  box-shadow: 0px 0px 10px rgb(156, 156, 156);
+  width: 200px;
+  margin-left: 25%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+main #order:active {
+  opacity: 0.9;
+  box-shadow: 0px 0px 15px rgb(105, 105, 105);
 }
 
 @media screen and (max-width: 768px) {
