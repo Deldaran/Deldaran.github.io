@@ -118,21 +118,37 @@
     font-size: small;
     margin-right: -2px;
 }
-@mixin button {
-    
+@mixin foot-btn {
+    text-decoration: none;
+    color: white;
+}
+@mixin animation-btn {
+    padding-left: 20px;
+    animation-name: liste;
+    animation-duration: 1500ms;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+@mixin btn-h2{
+    border-bottom: 4px $color-tertiary solid;
+    width: 40px;
+    margin-top: 6px;
 }
 @keyframes liste {
-    from {
+    0% {
         visibility: hidden;
-        transform:scaleY(0);
-        transform-origin: top;
+        
     }
-    to {
-        transform:scaleY(1);
+    1%{
+        transform-origin: top;
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
         visibility: visible;
     }
 }
-@keyframes spin {
+@keyframes loading-spin {
     0% { 
         transform: rotate(0deg);
         visibility: visible;
@@ -145,6 +161,14 @@
     100%{
         visibility: hidden;
     }
+  }
+  @keyframes spin {
+      0%{
+          transform: rotate(0deg);
+      }
+      100%{
+          transform: rotate(360deg);
+      }
   }
   @keyframes back-box {
       from{

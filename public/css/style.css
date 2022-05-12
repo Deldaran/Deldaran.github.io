@@ -1,15 +1,17 @@
 @keyframes liste {
-  from {
+  0% {
     visibility: hidden;
-    transform: scaleY(0);
-    transform-origin: top;
   }
-  to {
+  1% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  100% {
     transform: scaleY(1);
     visibility: visible;
   }
 }
-@keyframes spin {
+@keyframes loading-spin {
   0% {
     transform: rotate(0deg);
     visibility: visible;
@@ -19,6 +21,14 @@
   }
   100% {
     visibility: hidden;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 @keyframes back-box {
@@ -33,13 +43,14 @@ body {
   margin: 0px;
   animation: show;
   animation-duration: 5000ms;
+  font-family: "Roboto";
 }
 
 header .loading {
   position: fixed;
   z-index: 999;
   border: 16px solid #f3f3f3;
-  border-top: 16px solid #3498db;
+  border-top: 16px solid #FF79DA;
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -50,8 +61,9 @@ header .loading {
   right: 0;
   bottom: 0;
   visibility: hidden;
-  animation-name: spin;
+  animation-name: loading-spin;
   animation-duration: 3000ms;
+  animation-fill-mode: forwards;
 }
 header .back-box {
   content: "";
@@ -67,163 +79,124 @@ header .back-box {
   animation-name: back-box;
   animation-duration: 3000ms;
 }
-@media screen and (max-width: 768px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    font-family: "Roboto";
-    animation: show;
-    animation-duration: 1000ms;
-  }
+header #logo {
+  width: 50%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  padding-left: 25%;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
-@media screen and (max-width: 768px) {
-  header #logo {
-    width: 50%;
-    height: 5%;
-    display: flex;
-    justify-content: center;
-    padding-left: 25%;
-    margin-top: 25px;
-    margin-bottom: 10px;
-  }
+header label {
+  display: none;
 }
-@media screen and (max-width: 768px) {
-  header label {
-    display: none;
-  }
+header #search ::placeholder {
+  color: black;
+  font-size: medium;
+  font-weight: bolder;
 }
-@media screen and (max-width: 768px) {
-  header #search ::placeholder {
-    color: black;
-    font-size: medium;
-    font-weight: bolder;
-  }
-}
-@media screen and (max-width: 768px) {
-  header input {
-    width: 90%;
-    margin-right: -75%;
-    border: none;
-    background-color: rgba(223, 222, 222, 0.911);
-    text-align: center;
-    padding: 5%;
-    box-shadow: inset 0px 2px 6px rgba(128, 128, 128, 0.493);
-  }
+header input {
+  width: 90%;
+  margin-right: -75%;
+  border: none;
+  background-color: rgba(223, 222, 222, 0.911);
+  text-align: center;
+  padding: 5%;
+  box-shadow: inset 0px 2px 6px rgba(214, 214, 214, 0.308);
 }
 header #filter h2 {
   margin-left: 15px;
 }
-@media screen and (max-width: 768px) {
-  header ul {
-    list-style-type: none;
-    margin-left: -30px;
-  }
+header ul {
+  list-style-type: none;
+  margin-left: -30px;
 }
-@media screen and (max-width: 768px) {
-  header #loc-icon {
-    color: black;
-  }
+header #loc-icon {
+  color: black;
 }
-@media screen and (max-width: 768px) {
-  header #explorer {
-    background-color: rgba(214, 214, 214, 0.308);
-    flex-wrap: wrap;
-    margin-top: -15px;
-    padding: 10px 30px 50px 30px;
-    text-align: center;
-  }
+header #explorer {
+  background-color: rgba(214, 214, 214, 0.308);
+  flex-wrap: wrap;
+  margin-top: -15px;
+  padding: 10px 30px 50px 30px;
+  text-align: center;
 }
-@media screen and (max-width: 768px) {
-  header #explorer .btn {
-    background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-    padding: 20px;
-    border-radius: 30px;
-    border: none;
-    color: white;
-    font-size: medium;
-    height: auto;
-    width: 250px;
-    opacity: 1;
-    transition: opacity 100ms;
-    transition: all 200ms;
-    box-shadow: 0px 0px 10px rgb(156, 156, 156);
-  }
+header #explorer .btn {
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  padding: 20px;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-size: medium;
+  height: auto;
+  width: 250px;
+  opacity: 1;
+  transition: opacity 100ms;
+  transition: all 200ms;
+  box-shadow: 0px 0px 10px rgb(156, 156, 156);
 }
 header #explorer .btn:hover {
   opacity: 0.9;
   box-shadow: 0px 0px 15px rgb(105, 105, 105);
 }
-@media screen and (max-width: 768px) {
-  header .btn {
-    position: relative;
-    padding: 15px;
-    padding-right: 60px;
-    padding-left: 15px;
-    border-radius: 20px;
-    margin: 10px;
-    border: none;
-    width: 95%;
-    height: 60px;
-  }
+header .btn {
+  position: relative;
+  padding: 15px;
+  padding-right: 60px;
+  padding-left: 15px;
+  border-radius: 20px;
+  margin: 10px;
+  border: none;
+  width: 95%;
+  height: 60px;
 }
-@media screen and (max-width: 768px) {
-  header .btn span {
-    position: absolute;
-    color: white;
-    padding-top: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    left: -10px;
-    top: 20px;
-    width: 15px;
-    height: 20px;
-    border-radius: 15px;
-    background-color: #9356DC;
-  }
+header .btn span {
+  position: absolute;
+  color: white;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  left: -10px;
+  top: 20px;
+  width: 15px;
+  height: 20px;
+  border-radius: 15px;
+  background-color: #9356DC;
 }
-@media screen and (max-width: 768px) {
-  header .btn i {
-    padding-right: 20px;
-  }
+header .btn i {
+  padding-right: 20px;
 }
 
-@media screen and (max-width: 768px) {
-  main {
-    font-family: "Roboto";
-    background-color: rgba(223, 222, 222, 0.911);
-    padding-top: 20px;
-    padding-left: 30px;
-    padding-bottom: 30px;
-  }
+main {
+  font-family: "Roboto";
+  background-color: rgba(223, 222, 222, 0.911);
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-bottom: 30px;
 }
-@media screen and (max-width: 768px) {
-  main .card {
-    width: 95%;
-    height: 250px;
-    background-color: white;
-    box-sizing: border-box;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    position: relative;
-  }
+main .card {
+  width: 95%;
+  height: 250px;
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
 }
-@media screen and (max-width: 768px) {
-  main .card a {
-    color: black;
-    text-decoration: none;
-  }
+main .card a {
+  color: black;
+  text-decoration: none;
 }
-@media screen and (max-width: 768px) {
-  main .card .btn-like {
-    position: absolute;
-    z-index: 1;
-    bottom: 25px;
-    left: 80%;
-    font-size: 30px;
-    border: none;
-    background-color: white;
-  }
+main .card .btn-like {
+  position: absolute;
+  z-index: 1;
+  bottom: 25px;
+  left: 80%;
+  font-size: 30px;
+  border: none;
+  background-color: white;
 }
 main .card .btn-like::before {
   content: "\f004";
@@ -233,31 +206,23 @@ main .card .btn-like::before {
   transition: ease-in 500ms;
   color: gray;
 }
-@media screen and (max-width: 768px) {
-  main .card .btn-like:focus::before {
-    font-weight: 900;
-    color: #FF79DA;
-  }
+main .card .btn-like:focus::before {
+  font-weight: 900;
+  color: #FF79DA;
 }
-@media screen and (max-width: 768px) {
-  main .card_image {
-    position: relative;
-    height: 170px;
-    overflow: hidden;
-  }
+main .card_image {
+  position: relative;
+  height: 170px;
+  overflow: hidden;
 }
-@media screen and (max-width: 768px) {
-  main .card_image img {
-    position: absolute;
-    width: 100%;
-  }
+main .card_image img {
+  position: absolute;
+  width: 100%;
 }
-@media screen and (max-width: 768px) {
-  main .card-body .card-title {
-    height: 10px;
-    text-align: start;
-    padding-left: 10px;
-  }
+main .card-body .card-title {
+  height: 10px;
+  text-align: start;
+  padding-left: 10px;
 }
 @media screen and (max-width: 768px) {
   main .card-body .card-description {
@@ -266,37 +231,6 @@ main .card .btn-like::before {
     padding-left: 10px;
     padding-bottom: 10px;
   }
-}
-
-@media screen and (max-width: 768px) {
-  footer {
-    background-color: rgb(53, 53, 53);
-    padding: 20px;
-    font-family: "Roboto";
-    font-weight: 200;
-    color: white;
-  }
-}
-footer h2 {
-  font-family: "Shrikhand", cursive;
-  font-weight: 400;
-}
-@media screen and (max-width: 768px) {
-  footer ul {
-    list-style-type: none;
-    margin-left: -40px;
-  }
-}
-@media screen and (max-width: 768px) {
-  footer ul li {
-    margin-bottom: 10px;
-    display: flex;
-    gap: 15px;
-  }
-}
-footer ul li i[class="fa-solid fa-handshake-angle"] {
-  font-size: small;
-  margin-right: -2px;
 }
 
 /*# sourceMappingURL=style.css.map */

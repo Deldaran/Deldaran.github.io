@@ -1,0 +1,26 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+footer{
+    
+     @include footer;
+    
+   h2{
+       @include logo-foot-size;
+   }
+    ul{
+       
+           @include foot-ul;
+       
+       li{
+            @include foot-list;
+           
+           i[class="fa-solid fa-handshake-angle"]{
+                @include foot-icon;
+            }
+            .foot-btn{
+                @include foot-btn;
+            }
+        }
+    }
+}

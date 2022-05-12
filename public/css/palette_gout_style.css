@@ -1,15 +1,17 @@
 @keyframes liste {
-  from {
+  0% {
     visibility: hidden;
-    transform: scaleY(0);
-    transform-origin: top;
   }
-  to {
+  1% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  100% {
     transform: scaleY(1);
     visibility: visible;
   }
 }
-@keyframes spin {
+@keyframes loading-spin {
   0% {
     transform: rotate(0deg);
     visibility: visible;
@@ -19,6 +21,14 @@
   }
   100% {
     visibility: hidden;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 @keyframes back-box {
@@ -34,91 +44,74 @@ body {
   background-color: rgb(228, 228, 228);
 }
 
-@media screen and (max-width: 768px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    font-family: "Roboto";
-  }
+header {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto";
 }
-@media screen and (max-width: 768px) {
-  header #head-return {
-    display: flex;
-    align-items: baseline;
-  }
+header #head-return {
+  display: flex;
+  align-items: baseline;
 }
-@media screen and (max-width: 768px) {
-  header .return-btn {
-    border: none;
-    font-size: larger;
-    color: rgb(48, 48, 48);
-    background: none;
-    position: relative;
-    bottom: 23px;
-    left: 20px;
-  }
+header .return-btn {
+  border: none;
+  font-size: larger;
+  color: rgb(48, 48, 48);
+  background: none;
+  position: relative;
+  bottom: 23px;
+  left: 20px;
 }
-@media screen and (max-width: 768px) {
-  header #logo {
-    width: 50%;
-    height: 5%;
-    display: flex;
-    justify-content: center;
-    padding-left: 25%;
-    margin-top: 25px;
-    margin-bottom: 10px;
-  }
+header #logo {
+  width: 50%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  padding-left: 25%;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 header img {
   overflow: hidden;
 }
 
-@media screen and (max-width: 768px) {
-  main {
-    display: flex;
-    flex-direction: column;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    position: relative;
-    bottom: 50px;
-    background-color: rgb(228, 228, 228);
-    font-family: "Roboto";
-    box-sizing: content-box;
-  }
+main {
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  position: relative;
+  bottom: 50px;
+  background-color: rgb(228, 228, 228);
+  font-family: "Roboto";
+  box-sizing: content-box;
 }
-@media screen and (max-width: 768px) {
-  main #main-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding-left: 20px;
-    font-family: "Shrikhand", cursive;
-    font-weight: 100;
-    font-size: 15px;
-  }
+main #main-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 20px;
+  font-family: "Shrikhand", cursive;
+  font-weight: 100;
+  font-size: 15px;
 }
-@media screen and (max-width: 768px) {
-  main #main-title #heart::before {
-    content: "\f004";
-    font-family: "Font Awesome 6 free";
-    font-weight: 400;
-    font-size: 40px;
-    color: gray;
-  }
+main #main-title #heart::before {
+  content: "\f004";
+  font-family: "Font Awesome 6 free";
+  font-weight: 400;
+  font-size: 40px;
+  color: gray;
 }
-@media screen and (max-width: 768px) {
-  main .btn {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0px 0px 5px rgb(141, 141, 141);
-    width: 95%;
-    height: 70px;
-    margin: 10px;
-    margin-top: 15px;
-  }
+main .btn {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px rgb(141, 141, 141);
+  width: 95%;
+  height: 70px;
+  margin: 10px;
+  margin-top: 15px;
 }
 main .btn-title {
   height: 25px;
@@ -137,75 +130,71 @@ main .btn-description > p {
   overflow: hidden;
   text-align: left;
 }
-main .btn-description .price {
-  width: 20px;
-  height: 20px;
-  margin-right: 20px;
+main .btn-description .btn-price {
+  display: flex;
+  position: relative;
+}
+main .btn-description .btn-price .price {
+  position: relative;
   transition: all 1000ms;
 }
-main .btn-description .box {
-  transform-origin: 50% 0%;
-  transition: transform 1000ms;
-  transform: scaleX(0);
-}
-main .btn-description .box span {
-  display: none;
-}
-main .btn:focus .price {
-  margin-right: 80px;
-}
-main .btn:focus .box {
-  display: block;
-  font-size: 35px;
-  transform: scaleX(1);
-  color: white;
+main .btn-description .btn-price .box {
   position: relative;
-  bottom: 73px;
-  left: 36px;
-  border-top-right-radius: 20px;
+  left: 6px;
+  bottom: 26px;
   border-bottom-right-radius: 20px;
-  width: 70px;
+  border-top-right-radius: 20px;
+  width: 0px;
   height: 70px;
   background: aquamarine;
+  transform: scaleX(0);
+  transform-origin: 100%;
+  transition: all 1000ms;
 }
-main .btn:focus .box span {
+main .btn-description .btn-price .box span {
   position: relative;
   display: block;
+  color: white;
   top: 16px;
-  transform: rotate(1turn);
+  font-size: 0px;
+}
+main .btn:focus .box {
+  width: 80px;
+  transform: scaleX(1);
+}
+main .btn:focus .box span {
+  font-size: 35px;
+  animation-name: spin;
+  animation-duration: 1000ms;
+}
+main h2 {
+  border-bottom: 4px #99E2D0 solid;
+  width: 40px;
+  margin-top: 6px;
 }
 main #entre {
   padding-left: 20px;
   animation-name: liste;
   animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  visibility: hidden;
   animation-delay: 0ms;
-}
-main #entre h2 {
-  border-bottom: 4px #99E2D0 solid;
-  width: 40px;
-  margin-top: 6px;
 }
 main #plat {
   padding-left: 20px;
   animation-name: liste;
   animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  visibility: hidden;
   animation-delay: 1000ms;
-}
-main #plat h2 {
-  border-bottom: 4px #99E2D0 solid;
-  width: 40px;
-  margin-top: 6px;
 }
 main #dessert {
   padding-left: 20px;
   animation-name: liste;
   animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  visibility: hidden;
   animation-delay: 2000ms;
-}
-main #dessert h2 {
-  border-bottom: 4px #99E2D0 solid;
-  width: 40px;
-  margin-top: 6px;
 }
 main #order {
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
@@ -228,37 +217,6 @@ main #order {
 main #order:active {
   opacity: 0.9;
   box-shadow: 0px 0px 15px rgb(105, 105, 105);
-}
-
-@media screen and (max-width: 768px) {
-  footer {
-    background-color: rgb(53, 53, 53);
-    padding: 20px;
-    font-family: "Roboto";
-    font-weight: 200;
-    color: white;
-  }
-}
-footer h2 {
-  font-family: "Shrikhand", cursive;
-  font-weight: 400;
-}
-@media screen and (max-width: 768px) {
-  footer ul {
-    list-style-type: none;
-    margin-left: -40px;
-  }
-}
-@media screen and (max-width: 768px) {
-  footer ul li {
-    margin-bottom: 10px;
-    display: flex;
-    gap: 15px;
-  }
-}
-footer ul li i[class="fa-solid fa-handshake-angle"] {
-  font-size: small;
-  margin-right: -2px;
 }
 
 /*# sourceMappingURL=palette_gout_style.css.map */

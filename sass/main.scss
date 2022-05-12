@@ -6,13 +6,14 @@ body{
     margin: 0px;
     animation: show;
     animation-duration: 5000ms;
+    font-family: $font-text;
 }
 header{
     .loading{
         position: fixed;
         z-index: 999;
-        border: 16px solid #f3f3f3;
-        border-top: 16px solid #3498db;
+        border: 16px solid $color-loading-primary;
+        border-top: 16px solid $color-secondary;
         border-radius: 50%;
         width: 120px;
         height: 120px;
@@ -23,8 +24,9 @@ header{
         right: 0;
         bottom: 0;
         visibility: hidden;
-        animation-name: spin;
+        animation-name: loading-spin;
         animation-duration: 3000ms;
+        animation-fill-mode: forwards;
     }
     .back-box{
         content: '';
@@ -39,46 +41,31 @@ header{
         visibility: hidden;
         animation-name: back-box;
         animation-duration: 3000ms;
-    }
-    @include mobile-only{
-        display: flex;
-        flex-direction: column;
-        font-family: $font-text;
-        animation: show;
-        animation-duration: 1000ms;
+        
     }
     #logo{
-        @include mobile-only{
             @include logo-size;
             @include logo-position;
-        }
     }
     label{
-        @include mobile-only{
          display: none;
-        }
     }
     #search{
-        
         ::placeholder{
-            @include mobile-only{
-                color: $color-font ;
-                font-size: medium;
-                font-weight: bolder;
-            }
+            color: $color-font ;
+            font-size: medium;
+            font-weight: bolder;
+        
         }
     }
     input{
-        @include mobile-only{
-            width:90%;
-            margin-right: -75%;
-            border: none;
-            background-color: $search-color;
-            text-align: center;
-            padding: 5%;
-            box-shadow: inset 0px 2px 6px rgba(128, 128, 128, 0.493);
-        }
-       
+        width:90%;
+        margin-right: -75%;
+        border: none;
+        background-color: $search-color;
+        text-align: center;
+        padding: 5%;
+        box-shadow: inset 0px 2px 6px $background-color-primary;
     }
     #filter{
         h2{
@@ -86,28 +73,20 @@ header{
         }
     }
     ul{
-        @include mobile-only{
-            list-style-type: none;
-            margin-left:-30px ;
-        }
+        list-style-type: none;
+        margin-left:-30px ;
     }
     #loc-icon{
-        @include mobile-only{
-            color: $color-font ;
-        }
+         color: $color-font ;
     }
     #explorer{
-        @include mobile-only{
-            background-color: rgba(214, 214, 214, 0.308);
+            background-color: $background-color-primary;
             flex-wrap: wrap;
             margin-top: -15px;
             padding: $padding-explorer;
             text-align: center;
-        }
         .btn{
-            @include mobile-only{
-                @include explorer-btn
-            }
+                @include explorer-btn;
             &:hover{
                 @include btn-hover;
             }
@@ -115,54 +94,48 @@ header{
     
     }
     .btn{
-        @include mobile-only{
             @include header-btn;
-        }
+
         span{
-            @include mobile-only{
-                position: absolute;
-                color: white;
-                padding-top: 5px ;
-                padding-left: 5px;
-                padding-right: 5px;
-                left: -10px;
-                top: 20px;
-                width: 15px;
-                height: 20px;
-                border-radius: 15px;
-                background-color: $color-primary;
-            }
+            
+            position: absolute;
+            color: white;
+            padding-top: 5px ;
+            padding-left: 5px;
+            padding-right: 5px;
+            left: -10px;
+            top: 20px;
+            width: 15px;
+            height: 20px;
+            border-radius: 15px;
+            background-color: $color-primary;
         }
         i{
-            @include mobile-only{
                 padding-right: 20px;
-            }
         }
     }
 
 }
 main{
-    @include mobile-only{
-        font-family: $font-text;
-        background-color: $search-color ;
-        padding-top: 20px;
-        padding-left: 30px;
-        padding-bottom: 30px;
-    }
+    
+    font-family: $font-text;
+    background-color: $search-color ;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+
     .card{
-        @include mobile-only{
-            @include card;
-            position: relative;
-        }
+        
+        @include card;
+        position: relative;
+        
         a{
-            @include mobile-only{
-                @include style-a;
-            }
+        
+            @include style-a;
+        
         }
         .btn-like{
-            @include mobile-only{
                 @include btn-like-before;
-            }
             &::before{
                 content: "\f004";
                 font-family: "Font Awesome 6 free";
@@ -173,9 +146,7 @@ main{
             }
             &:focus{
                 &::before{
-                    @include mobile-only{
-                        @include btn-like-after;
-                    }
+                    @include btn-like-after;
                 }
 
             }
@@ -184,24 +155,19 @@ main{
     }
     
     .card_image{
-        @include mobile-only{
-            @include card-image;
-        }
+        @include card-image;
         img{
-            @include mobile-only{
-                @include card-img;
-            }
+            @include card-img;
         }
 
     }
     .card-body{
 
         .card-title{
-            @include mobile-only{
-                height: 10px;
-                text-align:start;
-                padding-left: 10px;
-            }
+            
+            height: 10px;
+            text-align:start;
+            padding-left: 10px;
         }
         .card-description{
             @include mobile-only{
@@ -212,26 +178,4 @@ main{
             }
         }
     }
-}
-footer{
-     @include mobile-only{
-      @include footer;
-     }
-    h2{
-        @include logo-foot-size;
-    }
-     ul{
-        @include mobile-only{
-            @include foot-ul
-        }
-        li{
-            @include mobile-only{
-                @include foot-list;
-            }
-            i[class="fa-solid fa-handshake-angle"]{
-                @include foot-icon
-            }
-        }
-
-     }
 }

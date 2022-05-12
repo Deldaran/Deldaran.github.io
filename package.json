@@ -6,8 +6,10 @@
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style expanded",
     "sass_palette": "sass --watch ./sass/sass_palette.scss:./public/css/palette_gout_style.css --style expanded",
+    "footer": "sass --watch ./sass/footer.scss:./public/css/footer.css --style expanded",
     "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed",
-    "prefix_palette":"postcss ./public/css/palette_gout_style.css --use autoprefixer -d ./public/css/prefixed_palette"
+    "prefix_palette":"postcss ./public/css/palette_gout_style.css --use autoprefixer -d ./public/css/prefixed_palette",
+    "prefix_footer":"postcss ./public/css/footer.css --use autoprefixer -d ./public/css/prefixed_footer"
   },
   "repository": {
     "type": "git",
