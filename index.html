@@ -15,90 +15,100 @@
     <header>
         <div class="back-box"></div>
         <div class="loading"></div>
-        <a href="index.html" ><img id="logo" src="image/ohmyfood.png" alt="logo"></a>
+        <a href="index.html" id="logo" ><img  src="image/ohmyfood.png" alt="logo"></a>
         <form action="#" id="search">
             <label for="lieux">Lieux</label>
-            <input id="lieux" type="text" name="lieux" placeholder=" Paris, Belleville">
+            <input id="lieux" type="text" name="lieux" placeholder=" Paris, Belleville" >
             <i id="loc-icon" class="fa-solid fa-location-dot"></i>
         </form>
-        <div id="explorer">
-            <h1>Réservez le menu qui vous convient</h1>
-            <p>Découvrez des restaurants d'exception, séléctionés par nos soins</p>
-            <button class="btn" type="button">Explorer nos restaurants</button>
-        </div>    
-        <div id="filter">
-            <h2>Fonctionnement</h2>
-            <nav id="list">
-                <ul>
-                    <li><button class="btn" type="button"><span>1</span><i class="fa-solid fa-mobile-screen"></i>Choisissez un restaurant</button></li>
-                    <li><button class="btn" type="button"><span>2</span><i class="fa-solid fa-list"></i>Composez votre menu</button></li>
-                    <li><button class="btn" type="button"><span>3</span><i class="fa-solid fa-store"></i>Dégustez au restaurant</button></li>
-                </ul>
-            </nav>
+        <div id="explorer-filter">
+            <div id="explorer">
+                <h1>Réservez le menu qui vous convient</h1>
+                <p>Découvrez des restaurants d'exception, séléctionés par nos soins</p>
+                <button class="btn" type="button">Explorer nos restaurants</button>
+            </div>    
+            <div id="filter">
+                <h2>Fonctionnement</h2>
+                <nav id="list">
+                    <ul>
+                        <li><button class="btn" type="button"><span>1</span><i class="fa-solid fa-mobile-screen"></i>Choisissez un restaurant</button></li>
+                        <li><button class="btn" type="button"><span>2</span><i class="fa-solid fa-list"></i>Composez votre menu</button></li>
+                        <li><button class="btn" type="button"><span>3</span><i class="fa-solid fa-store"></i>Dégustez au restaurant</button></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
     <main>
         <h2>Restaurant</h2>
-        <div class="card">
-            <a href="palette_gout.html">
-                <div class="card_image"><img src="image/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût"></div>
-                <div class="card-body">
-                    <div class="card-title">
-                        <h3>La palette du goût</h3>
-                    </div>
-                    <div class="card-description">
-                        <p>Ménilmontant</p>
-                    </div>
-                    <div class="new">
-                        <p>Nouveau</p>
-                    </div>
+        <div id="first-second-list">
+            <div id="first-list">
+                <div class="card">
+                    <a href="palette_gout.html">
+                        <div class="card_image"><img src="image/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût"></div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h3>La palette du goût</h3>
+                            </div>
+                            <div class="card-description">
+                                <p>Ménilmontant</p>
+                            </div>
+                            <div class="new">
+                                <span>Nouveau</span>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="btn-like"><span class="heart"></span></button>
                 </div>
-            </a>
-            <button class="btn-like"><span class="heart"></span></button>
-        </div>
-        <div class="card">
-            <a href="note-enchantée.html">
-                <div class="card_image"><img src="image/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée"></div>
-                <div class="card-body">
-                    <div class="card-title">
-                        <h3>La note enchantée</h3>
-                    </div>
-                    <div class="card-description">
-                        <p>Charonne</p>
-                        
-                    </div>
+                <div class="card">
+                    <a href="note-enchantee.html">
+                        <div class="card_image"><img src="image/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée"></div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h3>La note enchantée</h3>
+                            </div>
+                            <div class="card-description">
+                                <p>Charonne</p>
+                            </div>
+                            <div class="new">
+                                <span>Nouveau</span>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="btn-like"><span class="heart"></span></button>
                 </div>
-            </a>
-            <button class="btn-like"><span class="heart"></span></button>
-        </div>
-        <div class="card">
-            <a href="francaise.html">
-                <div class="card_image"><img src="image/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française"></div>
-                <div class="card-body">
-                    <div class="card-title">
-                        <h3>À la française</h3>
-                    </div>
-                    <div class="card-description">
-                        <p>Cité Rouge</p>
-                       
-                    </div>
+            </div>
+            <div id="second-list">
+                <div class="card">
+                    <a href="francaise.html">
+                        <div class="card_image"><img src="image/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française"></div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h3>À la française</h3>
+                            </div>
+                            <div class="card-description">
+                                <p>Cité Rouge</p>
+                            
+                            </div>
+                        </div>
+                    </a>
+                    <button class="btn-like"><span class="heart"></span></button>
                 </div>
-            </a>
-            <button class="btn-like"><span class="heart"></span></button>
-        </div>
-        <div class="card">
-            <a href="delice.html">
-                <div class="card_image"><img src="image/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens"></div>
-                <div class="card-body">
-                    <div class="card-title">
-                        <h3>Le délice des sens</h3>
-                    </div>
-                    <div class="card-description">
-                        <p>Folie-Méricourt</p>
-                    </div>
+                <div class="card">
+                    <a href="delice.html">
+                        <div class="card_image"><img src="image/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens"></div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h3>Le délice des sens</h3>
+                            </div>
+                            <div class="card-description">
+                                <p>Folie-Méricourt</p>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="btn-like"><span class="heart"></span></button>
                 </div>
-            </a>
-            <button class="btn-like"><span class="heart"></span></button>
+            </div>
         </div>
     </main>
     <footer>

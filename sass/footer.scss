@@ -3,23 +3,36 @@
 
 footer{
     
-     @include footer;
+    background-color: rgb(53, 53, 53);
+    padding: 20px;
+    font-family: $font-text;
+    font-weight: 200;
+    color: white;
+    @include desktop-only{
+        width: 100%;
+    }
     
    h2{
-       @include logo-foot-size;
+        font-family: $font-title;
+        font-weight: 400;
    }
     ul{
        
-           @include foot-ul;
+        list-style-type: none;
+        margin-left: -40px;
        
        li{
-            @include foot-list;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 15px;
            
            i[class="fa-solid fa-handshake-angle"]{
-                @include foot-icon;
+                font-size: small;
+                margin-right: -2px;
             }
             .foot-btn{
-                @include foot-btn;
+                text-decoration: none;
+                color: white;
             }
         }
     }

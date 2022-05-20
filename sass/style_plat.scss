@@ -1,0 +1,255 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+body{
+    margin: 0px;
+    background-color: $background-color-secondary;
+}
+header{
+        display: flex;
+        flex-direction: column;
+        font-family: $font-text;
+        @include desktop-only{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            
+        }
+    
+    #head-return{
+        
+        display: flex;
+        align-items: baseline;
+        @include desktop-only{
+            align-items: center;
+            margin-right: 3%;
+            margin-bottom: 5%;
+        }
+    }
+    .return-btn{
+        
+            border: none;
+            font-size: larger;
+            color: rgb(48, 48, 48);
+            background: none;
+            position: relative;
+            bottom: 23px;
+            left: 20px;
+            @include desktop-only{
+                display: none;
+            }
+    }
+    #logo{
+        @include logo-size;
+        @include logo-position;
+        @include desktop-only{
+            width: 50%;
+            margin: 0%;
+            padding: 0%;
+        }
+    }
+    #menu-img{
+        overflow: hidden;
+        @include desktop-only{
+            width: 40%;
+            height: 20%;
+        }
+    }
+}
+main{
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    position: relative;
+    bottom: 50px;
+    background-color: $background-color-secondary;
+    font-family: $font-text;
+    box-sizing: content-box;
+    @include desktop-only{
+        border-radius: 0;
+        border-top: 4px $color-tertiary solid;
+    }
+    #menu{
+        @include desktop-only{
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+    }
+    #main-title{
+        
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding-left: 20px;
+            font-family: $font-title;
+            font-weight: 100;
+            font-size: 15px;
+            @include desktop-only{
+                
+                justify-content: flex-start;
+            }
+        
+        #heart{
+            @include desktop-only{
+                display: none;
+            }
+            &::before{
+                content: "\f004";
+                font-family: "Font Awesome 6 free";
+                font-weight: 400;
+                font-size: 40px;
+                color: gray;
+            }
+        }
+    }
+    
+    .btn{
+        display: flex;
+        flex-direction: column;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0px 0px 5px rgb(141, 141, 141);
+        background: white;
+        width: 95%;
+        height: 70px;
+        padding: 10px;
+        margin: 0 auto;
+        margin-top: 15px;
+            &-title{
+                height: 25px;
+                
+            }
+            &-description{
+                display: flex;
+                justify-content: space-between;
+                height: 30px;
+                width: 100%;
+                > p{
+                    text-overflow: ellipsis;
+                    width: 270px;
+                    height: 30px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-align: left;
+                }
+                .btn-price{
+                    display: flex;
+                    position: relative;
+                    
+                    .price{
+                        position: relative;
+                        transition: all 1000ms;
+                        font-weight: bold;
+                    }
+                    .box{
+                        position: relative;
+                        left: 6px;
+                        bottom: 26px;
+                        border-bottom-right-radius: 20px;
+                        border-top-right-radius: 20px;
+                        width: 0px;
+                        margin: -9px -4px -51px 0;
+                        background: aquamarine;
+                        transform: scaleX(0);
+                        transform-origin: 100%;
+                        transition: all 1000ms;
+                        
+                        span{
+                            position: relative;
+                            display: block;
+                            color: white;
+                            top: 16px;
+                            left: 20px;
+                            font-size: 35px;
+                            transition: transform .7s ease-in-out;
+                        }
+                    }
+                }
+            }
+            
+        &:hover{
+            .box{
+                width: 80px;
+                transform: scaleX(1);
+                transition: all 700ms ease-in-out;
+                
+                span{
+                    
+                    transform: rotate(360deg);
+                                   
+                }
+            } 
+        }
+        @include desktop-only{
+            &:hover{
+                .box{
+                    width: 80px;
+                    transform: scaleX(1);
+                    transition: all 700ms ease-in-out;
+                    
+                    span{
+                        font-size: 35px;
+                        animation-name: spin;
+                        animation-duration: 1000ms;
+                        text-align: center;
+                        
+                    }
+                }
+            }
+        }
+    }
+    h2{
+        color: gray;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-top: 50px;
+        &:after{
+            display: block;
+            content: '';
+            border-bottom: 3px solid $color-tertiary;
+            width: 50px;
+        }
+    }
+    #entre{
+       @include animation-btn;
+       animation-delay: 0ms;
+       @include desktop-only{
+           width: 40%;
+       }
+    }
+    #plat{
+        @include animation-btn;
+        animation-delay: 1000ms;
+        @include desktop-only{
+            margin-left: 10%;
+            width: 40%;
+        }
+    }
+    #dessert{
+        @include animation-btn;
+        animation-delay: 2000ms;
+        @include desktop-only{
+            width: 40%;
+            padding-left: 29%;
+            padding-top: 5%;
+        }
+    }
+    #order{
+        @include explorer-btn;
+        width: 200px;
+        margin-left:25%; 
+        margin-top: 50px;
+        margin-bottom: 50px;
+        @include desktop-only{
+            margin-left: 40%;
+        }
+        &:active{
+            @include btn-hover;
+        }
+    }
+
+    
+
+}

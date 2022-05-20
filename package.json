@@ -4,11 +4,11 @@
   "description": "\"# Deldaran.github.io\"",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style expanded",
-    "sass_palette": "sass --watch ./sass/sass_palette.scss:./public/css/palette_gout_style.css --style expanded",
-    "footer": "sass --watch ./sass/footer.scss:./public/css/footer.css --style expanded",
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style compressed",
+    "sass_plat": "sass --watch ./sass/style_plat.scss:./public/css/style_plat.css --style compressed",
+    "footer": "sass --watch ./sass/footer.scss:./public/css/footer.css --style compressed",
     "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed",
-    "prefix_palette":"postcss ./public/css/palette_gout_style.css --use autoprefixer -d ./public/css/prefixed_palette",
+    "prefix_plat":"postcss ./public/css/style_plat.css --use autoprefixer -d ./public/css/prefixed_plat",
     "prefix_footer":"postcss ./public/css/footer.css --use autoprefixer -d ./public/css/prefixed_footer"
   },
   "repository": {

@@ -3,12 +3,18 @@
 
 
 body{
-    margin: 0px;
+    margin: 0 auto;
     animation: show;
     animation-duration: 5000ms;
     font-family: $font-text;
+    width: 100%;
+    @include desktop-only{
+        margin:0 auto;
+        width: 80%;
+    }
 }
 header{
+    
     .loading{
         position: fixed;
         z-index: 999;
@@ -44,8 +50,19 @@ header{
         
     }
     #logo{
+        @include desktop-only{
+            padding-left: 0%;
+            display: flex;
+            padding-bottom: 10px;
+        }
+        img{
             @include logo-size;
             @include logo-position;
+            @include desktop-only{
+                position: relative;
+                right: 25%;
+            }
+        }
     }
     label{
          display: none;
@@ -55,7 +72,14 @@ header{
             color: $color-font ;
             font-size: medium;
             font-weight: bolder;
-        
+        }
+        @include desktop-only{
+            width: 20%;
+            height: 20%;
+            position: absolute;
+            left: 70%;
+            bottom: 76%;
+            
         }
     }
     input{
@@ -66,18 +90,22 @@ header{
         text-align: center;
         padding: 5%;
         box-shadow: inset 0px 2px 6px $background-color-primary;
-    }
-    #filter{
-        h2{
-            margin-left: 15px;
+        @include desktop-only{
+            border-bottom-right-radius: 20px;
+            border-top-right-radius: 20px;
         }
     }
-    ul{
-        list-style-type: none;
-        margin-left:-30px ;
-    }
+    
     #loc-icon{
          color: $color-font ;
+         @include desktop-only{
+            position: absolute;
+            right: 100%;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            background: linear-gradient(to bottom right,$color-secondary,$color-primary);
+            padding: 5%;
+        }
     }
     #explorer{
             background-color: $background-color-primary;
@@ -85,8 +113,28 @@ header{
             margin-top: -15px;
             padding: $padding-explorer;
             text-align: center;
+            @include desktop-only{
+                width: 99%;
+                margin-top: 20px;
+                border-radius: 20px;
+                font-size: 15px;
+            }
+            &::before{
+                @include desktop-only{
+                    position: relative;
+                    display: block;
+                    content: '';
+                    border-bottom: 2px solid black ;
+                    width: 130%;
+                    right: 20%;
+                    bottom: 30px;
+                }
+            }
         .btn{
-                @include explorer-btn;
+            @include explorer-btn;
+            @include desktop-only{
+                font-size: 25px;
+            }
             &:hover{
                 @include btn-hover;
             }
@@ -95,14 +143,18 @@ header{
     }
     .btn{
             @include header-btn;
+            @include desktop-only{
+                font-size: 20px;
+            }
 
         span{
             
             position: absolute;
             color: white;
-            padding-top: 5px ;
+            padding-top: 3px;
             padding-left: 5px;
             padding-right: 5px;
+            padding-bottom: 3px;
             left: -10px;
             top: 20px;
             width: 15px;
@@ -114,6 +166,25 @@ header{
                 padding-right: 20px;
         }
     }
+    #filter{
+        @include desktop-only{
+            background-color: $background-color-primary;
+            width: 102%;
+            border-radius: 20px;
+            margin-top: 20px;
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+        h2{
+            margin-left: 15px;
+            
+        }
+    }
+    ul{
+        list-style-type: none;
+        margin-left:-30px ;
+        
+    }
 
 }
 main{
@@ -123,7 +194,31 @@ main{
     padding-top: 20px;
     padding-left: 30px;
     padding-bottom: 30px;
-
+    padding-right: 30px;
+    
+    @include desktop-only{
+        margin-top: 20px;
+        width: 99%;
+        padding-right: 2%;
+        background-color:$background-color-primary ;
+        border-radius: 20px;        
+    }
+    #first-second-list{
+        @include desktop-only{
+            display: flex;
+            gap: 5%;
+        }
+    }
+    #first-list{
+        @include desktop-only{
+        width: 50%;
+        }
+    }
+    #second-list{
+        @include desktop-only{
+            width: 50%;
+        }
+    }
     .card{
         
         @include card;
@@ -136,6 +231,9 @@ main{
         }
         .btn-like{
                 @include btn-like-before;
+                @include desktop-only{
+                    left: 85%;
+                }
             &::before{
                 content: "\f004";
                 font-family: "Font Awesome 6 free";
@@ -147,8 +245,17 @@ main{
             &:focus{
                 &::before{
                     @include btn-like-after;
+                    
                 }
 
+            }
+            @include desktop-only{
+                &:hover{
+                    &::before{
+                        @include btn-like-after;
+                        
+                    }
+                }
             }
             
         }
@@ -170,12 +277,22 @@ main{
             padding-left: 10px;
         }
         .card-description{
-            @include mobile-only{
-                display: flex;
-                position: relative;
-                padding-left:10px; 
-                padding-bottom: 10px; 
-            }
+            display: flex;
+            position: relative;
+            padding-left:10px; 
+            padding-bottom: 10px; 
+        }
+        .new{
+            position: absolute;
+            text-align: center;
+            top: 5%;
+            right:10%;
+            background-color: $color-tertiary;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
         }
     }
+
 }

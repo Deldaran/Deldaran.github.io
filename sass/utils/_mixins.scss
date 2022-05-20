@@ -1,5 +1,5 @@
-@mixin mobile-only {
-    @media screen and (max-width : map-get($breakpoints, mobile)) {
+@mixin desktop-only {
+    @media screen and (min-width : map-get($breakpoints, mobile)) {
         @content;
     }
 }
@@ -49,8 +49,8 @@
 }
 
 @mixin card {
-    width: 95%;
-    height: 250px;
+    width: 100%;
+    height: 300px;
     background-color: white;
     box-sizing: border-box;
     border-radius: 20px;
@@ -75,8 +75,6 @@
 @mixin card-img {
     position: absolute ;
     width: 100%;
-    
-    
 }
 @mixin btn-like-before {
         
@@ -93,34 +91,7 @@
 @mixin btn-like-after {
     font-weight: 900;
     color: $color-secondary;
-}
-@mixin footer {
-    background-color: rgb(53, 53, 53);
-    padding: 20px;
-    font-family: $font-text;
-    font-weight: 200;
-    color: white;
-}
-@mixin logo-foot-size {
-    font-family: $font-title;
-        font-weight: 400;
-}
-@mixin foot-list {
-    margin-bottom: 10px;
-    display: flex;
-    gap: 15px;
-}
-@mixin foot-ul {
-    list-style-type: none;
-    margin-left: -40px;
-}
-@mixin foot-icon {
-    font-size: small;
-    margin-right: -2px;
-}
-@mixin foot-btn {
-    text-decoration: none;
-    color: white;
+    
 }
 @mixin animation-btn {
     padding-left: 20px;
@@ -129,11 +100,7 @@
     animation-fill-mode: forwards;
     visibility: hidden;
 }
-@mixin btn-h2{
-    border-bottom: 4px $color-tertiary solid;
-    width: 40px;
-    margin-top: 6px;
-}
+
 @keyframes liste {
     0% {
         visibility: hidden;
@@ -165,6 +132,7 @@
   @keyframes spin {
       0%{
           transform: rotate(0deg);
+          transform-origin: center;
       }
       100%{
           transform: rotate(360deg);
