@@ -6,10 +6,8 @@
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style compressed",
     "sass_plat": "sass --watch ./sass/style_plat.scss:./public/css/style_plat.css --style compressed",
-    "footer": "sass --watch ./sass/footer.scss:./public/css/footer.css --style compressed",
     "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed",
-    "prefix_plat":"postcss ./public/css/style_plat.css --use autoprefixer -d ./public/css/prefixed_plat",
-    "prefix_footer":"postcss ./public/css/footer.css --use autoprefixer -d ./public/css/prefixed_footer"
+    "prefix_plat":"postcss ./public/css/style_plat.css --use autoprefixer -d ./public/css/prefixed_plat"
   },
   "repository": {
     "type": "git",

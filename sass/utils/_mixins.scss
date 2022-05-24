@@ -100,7 +100,40 @@
     animation-fill-mode: forwards;
     visibility: hidden;
 }
-
+@mixin footer{
+    background-color: rgb(53, 53, 53);
+    padding: 20px;
+    font-family: $font-text;
+    font-weight: 200;
+    color: white;
+}
+@mixin footer-h2 {
+    font-family: $font-title;
+    font-weight: 400;
+}
+@mixin footer-ul {
+    list-style-type: none;
+    padding: 0;
+    @include desktop-only{
+      text-align: center;
+    }
+}
+@mixin footer-li {
+    margin-bottom: 10px;
+    display: flex;
+    @include desktop-only{
+        display: inline-block;
+        margin-left: 20px;
+    }
+}
+@mixin footer-li-i {
+    font-size: small;
+    margin-right: -2px;
+}
+@mixin footer-btn {
+    text-decoration: none;
+    color: white;
+}
 @keyframes liste {
     0% {
         visibility: hidden;
@@ -131,8 +164,15 @@
   }
   @keyframes spin {
       0%{
+        visibility: hidden;
+        
+      }
+      10%{
+          visibility: visible;
+          
+      }
+      20%{
           transform: rotate(0deg);
-          transform-origin: center;
       }
       100%{
           transform: rotate(360deg);
@@ -146,4 +186,3 @@
           visibility: hidden;
       }
   }
-  
