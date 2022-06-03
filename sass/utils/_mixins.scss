@@ -33,7 +33,7 @@
     box-shadow: 0px 0px 10px rgb(156, 156, 156);
 }
 @mixin btn-hover {
-    opacity: 0.90;
+    opacity: 0.80;
     box-shadow: 0px 0px 15px rgb(105, 105, 105);
 }
 @mixin header-btn {
@@ -50,7 +50,7 @@
 
 @mixin card {
     width: 100%;
-    height: 300px;
+    height: 50%;
     background-color: white;
     box-sizing: border-box;
     border-radius: 20px;
@@ -77,28 +77,27 @@
     width: 100%;
 }
 @mixin btn-like-before {
-        
+    
     position: absolute;
     z-index: 1;
-    bottom: 25px;
+    bottom:13%;
     left: 80%;
-    font-size: 30px;
+    font-size: 33px;
     border: none;
     background-color: white;
     
 
 }
 @mixin btn-like-after {
-    font-weight: 900;
-    color: $color-secondary;
+    opacity: 1;
     
 }
 @mixin animation-btn {
     padding-left: 20px;
     animation-name: liste;
     animation-duration: 1500ms;
-    animation-fill-mode: forwards;
-    visibility: hidden;
+    animation-fill-mode: both;
+    
 }
 @mixin footer{
     background-color: rgb(53, 53, 53);
@@ -135,17 +134,14 @@
     color: white;
 }
 @keyframes liste {
-    0% {
-        visibility: hidden;
-        
-    }
-    1%{
+    from{
         transform-origin: top;
-        transform: scaleY(0);
+        transform: translate3d(0, 50%, 0);
+        opacity: 0;
     }
-    100% {
-        transform: scaleY(1);
-        visibility: visible;
+    to{
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
     }
 }
 @keyframes loading-spin {

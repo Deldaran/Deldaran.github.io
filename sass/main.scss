@@ -147,15 +147,24 @@ header{
             @include desktop-only{
                 font-size: 20px;
             }
-
+            i{
+                font-size: large;
+            }
+        &:hover{
+            background-color: #9256dc56;
+            i{
+                color: $color-primary;
+                
+            }
+        }
         span{
             
             position: absolute;
             color: white;
-            padding-top: 3px;
+            padding-top: 5px;
             padding-left: 5px;
             padding-right: 5px;
-            padding-bottom: 3px;
+            padding-bottom: 0px;
             left: -10px;
             top: 20px;
             width: 15px;
@@ -237,19 +246,31 @@ main{
                     left: 85%;
                 }
             &::before{
+                position: absolute;
                 content: "\f004";
                 font-family: "Font Awesome 6 free";
                 font-weight: 400;
-                font-size: larger;
-                transition: ease-in 500ms;
+                font-size: 33px;
+                transition: ease-in-out 500ms;
                 color: gray;
+                opacity: 1;
             }
             &:focus{
                 &::before{
+                    opacity: 0;
+                }
+                i{
                     @include btn-like-after;
-                    
                 }
 
+            }
+            i{
+                opacity: 0;
+                transition: ease-in-out 500ms;
+                background: linear-gradient(to right,$color-secondary,$color-primary);
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
             }
             @include desktop-only{
                 &:hover{
